@@ -1,0 +1,14 @@
+Cours sur les prototypes JavaScript
+
+objet4 = new Conversion2();
+objet4.x => 4
+
+// Si on appelle objet4.x, l'interpréteur va voir dans le prototype de la classe d'objet4 (Conversion)
+objet4.x =>
+Conversion2.prototype.x => rien // On ne trouve rien
+Conversion2.prototype.constructor.prototype.x // On va donc chercher dans le prototype du constructor du prototype de Conversion2 et on trouve 4
+
+// On peut donc faire de l'héritage avec cette méthode (~bidouille)
+Conversion2.prototype = new Conversion();
+Conversion2.prototype.constructor.prototype
+Conversion2.prototype.prototype.constructor => Conversion;

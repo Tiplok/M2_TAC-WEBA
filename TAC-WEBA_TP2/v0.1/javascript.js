@@ -1,4 +1,4 @@
-onload = function(){
+window.onload = function(){
     reponse = {};
     avoirToutLeTableau("tableauZave",function (json) {
         reponse.tab=json.donnees.tableau;
